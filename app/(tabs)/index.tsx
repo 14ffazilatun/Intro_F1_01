@@ -6,8 +6,19 @@ export default function App() {
     <View style={styles.container}>
       {/* Using the component here automatically activates the faded import */}
       <LinearGradient colors={["#ff0000", "#000000"]} style={styles.gradient}>
-        <Text style={styles.textwelcome}>Welcome to</Text>
-        <Text style={styles.texttitle}>The Paddock Club</Text>
+        <Text style={{ fontFamily: "Michroma", fontSize: 24, color: "#fff" }}>
+          Welcome to
+        </Text>
+        <Text
+          style={{
+            fontFamily: "Audiowide",
+            fontSize: 50,
+            fontWeight: "bold",
+            color: "#fff",
+          }}
+        >
+          THE PADDOCK CLUB
+        </Text>
       </LinearGradient>
     </View>
   );
@@ -26,13 +37,14 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  textwelcome: {
-    color: "#fff",
-    fontWeight: "bold",
-  },
-  texttitle: {
-    color: "#fff",
-    fontSize: 24,
-    fontWeight: "bold",
-  },
+  // textwelcome: {
+  //   fontFamily: "Michroma",
+  //   fontWeight: "bold",
+  // },
+  // texttitle: {
+  //   fontFamily: "Audiowide",
+  //   fontSize: 30,
+  //   fontWeight: "bold",
+  //   color: "#fff",
+  // },
 });
