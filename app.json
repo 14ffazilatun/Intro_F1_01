@@ -28,6 +28,15 @@
     "plugins": [
       "expo-router",
       [
+        "expo-font",
+        {
+          "fonts": [
+            "./assets/fonts/Michroma-Regular.ttf",
+            "./assets/fonts/Audiowide-Regular.ttf"
+          ]
+        }
+      ],
+      [
         "expo-splash-screen",
         {
           "image": "./assets/images/splash-icon.png",
@@ -38,19 +47,6 @@
             "backgroundColor": "#000000"
           }
         }
-<<<<<<< HEAD
-      ],
-      "expo-font",
-      "expo-image",
-      "expo-status-bar",
-      "expo-web-browser",
-      [
-        "expo-asset",
-        {
-          "assets": ["./assets/images/checkered flag.png"]
-        }
-=======
->>>>>>> parent of 5a9aa52 (added Audiowide and Michroma fonts)
       ]
     ],
     "experiments": {
