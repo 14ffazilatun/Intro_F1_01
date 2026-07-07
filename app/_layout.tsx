@@ -1,5 +1,5 @@
-import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
+<<<<<<< HEAD
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 import { LogBox } from "react-native";
@@ -14,24 +14,12 @@ export function BasicButtonExample() {
 }
 SplashScreen.preventAutoHideAsync();
 
+=======
+import {LogBox} from "react-native";
+>>>>>>> parent of 5a9aa52 (added Audiowide and Michroma fonts)
 LogBox.ignoreAllLogs(true);
 
 export default function RootLayout() {
-  const [loaded, error] = useFonts({
-    Audiowide: require("../assets/fonts/Audiowide-Regular.ttf"),
-    Michroma: require("../assets/fonts/Michroma-Regular.ttf"),
-  });
-
-  useEffect(() => {
-    if (loaded || error) {
-      SplashScreen.hideAsync();
-    }
-  }, [loaded, error]);
-
-  if (!loaded && !error) {
-    return null;
-  }
-
   return (
     <Stack>
       <Stack.Screen

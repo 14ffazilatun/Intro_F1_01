@@ -38,6 +38,7 @@
             "backgroundColor": "#000000"
           }
         }
+<<<<<<< HEAD
       ],
       "expo-font",
       "expo-image",
@@ -48,6 +49,8 @@
         {
           "assets": ["./assets/images/checkered flag.png"]
         }
+=======
+>>>>>>> parent of 5a9aa52 (added Audiowide and Michroma fonts)
       ]
     ],
     "experiments": {

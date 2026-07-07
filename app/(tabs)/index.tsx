@@ -5,36 +5,16 @@ export default function App() {
   return (
     <View style={styles.container}>
       {/* Using the component here automatically activates the faded import */}
-      <Image
-        source={require("../../assets/images/checkered flag.png")}
-        style={styles.image}
-        placeholder={{ blurhash: "L5H2EC=PM+yV0g-mq.wG9c010J}I" }}
-        contentFit="cover"
-        transition={1000}
-      />
-
-      <LinearGradient
-        colors={["#fc0808", "#000000"]}
-        style={styles.linearGradient}
-      >
-        <Text
-          style={{
-            fontFamily: "Michroma",
-            fontSize: 24,
-            color: "#fff",
-            height: 100,
-          }}
-        >
+      <LinearGradient colors={["#ff0000", "#000000"]} style={styles.gradient}>
+        <Text style={{ fontFamily: "Michroma", fontSize: 24, color: "#fff" }}>
           Welcome to
         </Text>
         <Text
           style={{
             fontFamily: "Audiowide",
-            fontSize: 90,
+            fontSize: 50,
             fontWeight: "bold",
             color: "#fff",
-            justifyContent: "flex-start",
-            alignItems: "center",
           }}
         >
           THE PADDOCK CLUB
@@ -57,18 +37,14 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
-  image: {
-    position: "absolute",
-    zIndex: 10,
-    width: "100%",
-    height: "20%",
-    justifyContent: "flex-start",
-    alignItems: "center",
-  },
-  linearGradient: {
-    flex: 1,
-    width: "100%",
-    justifyContent: "center",
-    alignItems: "center",
-  },
+  // textwelcome: {
+  //   fontFamily: "Michroma",
+  //   fontWeight: "bold",
+  // },
+  // texttitle: {
+  //   fontFamily: "Audiowide",
+  //   fontSize: 30,
+  //   fontWeight: "bold",
+  //   color: "#fff",
+  // },
 });
