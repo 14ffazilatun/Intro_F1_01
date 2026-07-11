@@ -1,39 +1,15 @@
 import { useFonts } from "expo-font";
 import { LinearGradient } from "expo-linear-gradient";
+import { Link } from "expo-router";
 import {
   ActivityIndicator,
   Pressable,
   StyleSheet,
   Text,
-  View,
+  View
 } from "react-native";
 
-export const AppButton = (props: any) => {
-  return (
-    <Pressable
-      style={({ pressed }) => [
-        {
-          backgroundColor: props.disabled
-            ? "#ccc"
-            : pressed
-              ? "#9a3030a3"
-              : props.color || "red",
-        },
-        props.buttonStyles,
-      ]}
-      disabled={props.disabled}
-      onPress={props.onPress}
-      accessible
-      accessibilityLabel={props.accessibilityLabel || "A Button"}
-    >
-      <Text
-        style={{ fontFamily: "Michroma-Regular", fontSize: 16, color: "#fff" }}
-      >
-        {props.children || "Press Me"}
-      </Text>
-    </Pressable>
-  );
-};
+
 
 export default function App() {
   // Pass the actual asset files directly via the require method
@@ -67,6 +43,7 @@ export default function App() {
             fontFamily: "Michroma-Regular",
             fontSize: 24,
             color: "#fff",
+            paddingVertical: 20,
           }}
         >
           Welcome to
@@ -74,33 +51,22 @@ export default function App() {
         <Text
           style={{
             fontFamily: "Audiowide-Regular",
-            fontSize: 70,
+            fontSize: 60,
             fontWeight: "regular",
             color: "#fff",
             paddingVertical: 30,
+            paddingHorizontal: 5,
           }}
         >
           THE PADDOCK CLUB
         </Text>
-        <AppButton
-          color="rgba(255,255,255,0.15)"
-          buttonStyles={{
-            fontsize: 40,
-            paddingVertical: 20,
-            paddingHorizontal: 80,
-            borderRadius: 100,
-            width: 300,
-            alignItems: "flex-end",
-            justifyContent: "center",
-            backgroundColor: "rgba(255, 255, 255, 0.06)",
-            borderWidth: 2,
-            borderColor: "rgb(161, 6, 6)",
-            backdropFilter: "blur(20px)", // works on web
-          }}
-          onPress={() => console.log("Begin")}
-        >
-          Click to begin
-        </AppButton>
+        
+       {/* Home screen welcome button to go to the main app page */}
+        <Link href="/(tabs)/about" asChild style={styles.Button}>
+          <Pressable>
+            <Text style={styles.buttonText}>Click to begin</Text>
+          </Pressable>
+        </Link>
       </LinearGradient>
     </View>
   );
@@ -118,5 +84,24 @@ const styles = StyleSheet.create({
     width: "100%",
     justifyContent: "center",
     alignItems: "center",
+  },
+  buttonText: {
+    fontFamily: "Michroma-Regular",
+    fontSize: 16,
+    color: "#fff",
+    alignItems: "center",
+  },
+  Button: {
+    fontSize: 40,
+    paddingVertical: 20,
+    paddingHorizontal: 80,
+    borderRadius: 100,
+    width: 300,
+    alignItems: "flex-end",
+    justifyContent: "center",
+    backgroundColor: "rgba(255, 255, 255, 0.06)",
+    borderWidth: 2,
+    borderColor: "rgba(115, 8, 8, 0.65)",
+    backdropFilter: "blur(20px)", // works on web
   },
 });
