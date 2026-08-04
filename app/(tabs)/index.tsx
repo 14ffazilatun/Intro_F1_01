@@ -6,10 +6,8 @@ import {
   Pressable,
   StyleSheet,
   Text,
-  View
+  View,
 } from "react-native";
-
-
 
 export default function App() {
   // Pass the actual asset files directly via the require method
@@ -56,17 +54,23 @@ export default function App() {
             color: "#fff",
             paddingVertical: 30,
             paddingHorizontal: 5,
+            marginHorizontal: 5,
           }}
         >
           THE PADDOCK CLUB
         </Text>
-        
-       {/* Home screen welcome button to go to the main app page */}
+
+        {/* Home screen welcome button to go to the main app page */}
+
         <Link href="/(tabs)/about" asChild style={styles.Button}>
           <Pressable>
             <Text style={styles.buttonText}>Click to begin</Text>
           </Pressable>
         </Link>
+
+        {/* <GlassView style={styles.tintedGlassView} glassEffectStyle="clear">
+          <Text style={styles.buttonText}>Tinted Glass Effect Box</Text>
+        </GlassView> */}
       </LinearGradient>
     </View>
   );
@@ -104,4 +108,16 @@ const styles = StyleSheet.create({
     borderColor: "rgba(115, 8, 8, 0.65)",
     backdropFilter: "blur(20px)", // works on web
   },
+
+  // tintedGlassView: {
+  //   width: 300,
+  //   height: 100,
+  //   borderRadius: 100,
+  //   borderWidth: 2,
+  //   borderColor: "rgba(115, 8, 8, 0.65)",
+  //   justifyContent: "center",
+  //   alignItems: "center",
+  //   paddingVertical: 20,
+  //   paddingHorizontal: 80,
+  // },
 });

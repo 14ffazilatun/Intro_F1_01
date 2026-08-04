@@ -16,13 +16,7 @@ export default function TabsLayout() {
         }
       }}
     >
-      <Tabs.Screen
-        name="(tabs)"
-        options={{
-          headerTitle: "Fida",
-          headerLeft: () => <></>,
-        }}
-      />
+     
       <Tabs.Screen
         name="index"
         options={{
@@ -38,10 +32,16 @@ export default function TabsLayout() {
         name="about"
         options={{
           headerTitle: "About",
+          tabBarIcon: ({focused, color}) =>(
+             <Ionicons
+              name ={focused ? "information-circle-sharp" : "information-circle-outline"}
+              color={color}
+              size = {24} />)
         }}
       />
+     
       <Tabs.Screen
-        name="not-found"
+        name="+not-found"
         options={{
           headerShown: false,
         }}

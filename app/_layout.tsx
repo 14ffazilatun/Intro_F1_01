@@ -11,13 +11,6 @@ export default function RootLayout() {
           headerShown: false,
         }}
       />
-
-      <Stack.Screen
-        name="not-found"
-        options={{
-          headerShown: false,
-        }}
-      />
     </Stack>
   );
 }
