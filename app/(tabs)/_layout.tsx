@@ -4,7 +4,7 @@ export default function TabsLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: "blue",
+        tabBarActiveTintColor: "#6f0e0e",
         headerShown: false,
         headerStyle: {
           backgroundColor: "#25292e",
@@ -21,6 +21,7 @@ export default function TabsLayout() {
         name="index"
         options={{
           headerTitle: "Index",
+          tabBarStyle: { display: "none" },
           tabBarIcon: ({focused, color}) =>(
              <Ionicons
               name ={focused ? "home-sharp" : "home-outline"}

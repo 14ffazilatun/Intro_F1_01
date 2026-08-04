@@ -1,7 +1,15 @@
 import { LinearGradient } from "expo-linear-gradient";
 import { Link } from "expo-router";
 import { useEffect, useState } from "react";
-import { ActivityIndicator, FlatList, Pressable, StyleSheet, Text, View } from "react-native";
+import {
+  ActivityIndicator,
+  FlatList,
+  Pressable,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 
 export function StandingsScreen() {
   const [standings, setStandings] = useState([]);
@@ -26,12 +34,23 @@ export function StandingsScreen() {
         keyExtractor={(item) => item["Driver"]["driverId"]}
         renderItem={({ item }) => (
           <View style={styles.standingItem}>
-            <Text style={{ color: "#fff", fontSize: 18 }}>
+            <Text style={styles.DriverNames}>
               {item["position"]}. {item["Driver"]["givenName"]}{" "}
               {item["Driver"]["familyName"]}
             </Text>
             <Text style={styles.standingText}>
-              {item["Constructors"][0]["name"]} {item["points"]} pts
+              {item["Constructors"][0]["name"]}
+            </Text>
+            <Text
+              style={{
+                color: "#fff",
+                fontSize: 20,
+                textAlign: "right",
+                marginBottom: 2,
+                fontFamily: "Audiowide-Regular",
+              }}
+            >
+              {item["points"]} pts
             </Text>
           </View>
         )}
@@ -47,9 +66,20 @@ export default function AboutScreen() {
         colors={["#000000", "#190303", "#6a0909"]}
         style={styles.gradient}
       >
-      <View style={{ width: "100%", alignItems: "center", justifyContent: "center" }}>
-        <StandingsScreen />
-      </View>
+        <ScrollView style={styles.scrollViewContainer}>
+          <Text
+            style={{
+              color: "#fff",
+              fontSize: 18,
+              textAlign: "center",
+              marginVertical: 10,
+              fontFamily: "Audiowide-Regular",
+            }}
+          >
+            Current Standings for 2026 Season
+          </Text>
+          <StandingsScreen />
+        </ScrollView>
         <View style={styles.buttonContainer}>
           <Link href="/about" asChild style={styles.navigationButton}>
             <Pressable>
@@ -67,13 +97,13 @@ const styles = StyleSheet.create({
     flex: 1,
     width: "100%",
     alignItems: "center",
-    justifyContent: "flex-start",
+    justifyContent: "center",
   },
   gradient: {
     flex: 1,
     width: "100%",
-    justifyContent: "flex-start",
-    alignItems: "flex-start",
+    justifyContent: "center",
+    alignItems: "center",
   },
   text: {
     fontFamily: "Audiowide-Regular",
@@ -113,12 +143,27 @@ const styles = StyleSheet.create({
   standingItem: {
     padding: 16,
     borderBottomWidth: 1,
-    borderColor: "#333",
-    backgroundColor: "#312d2dc1",
+    borderColor: "#b4acacab",
+    backgroundColor: "#37090993",
     fontFamily: "Audiowide-Regular",
+  },
+  DriverNames: {
+    color: "#f6f5f5dc",
+    fontSize: 18,
+    fontFamily: "Michroma-Regular",
   },
   standingText: {
     color: "#aaa",
     fontFamily: "Michroma-Regular",
+    textAlign: "left",
+    marginBottom: 2,
+  },
+  scrollViewContainer: {
+    width: "95%",
+    borderColor: "#fff",
+    borderWidth: 1,
+    borderRadius: 10,
+    marginVertical: 120,
+    backgroundColor: "#68151547",
   },
 });
